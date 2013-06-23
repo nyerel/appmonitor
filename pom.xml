@@ -11,7 +11,7 @@
 
     <properties>
         <spring.version>3.2.1.RELEASE</spring.version>
-        <javasimon.version>3.3.0</javasimon.version>
+        <slf4j.version>1.7.5</slf4j.version>
     </properties>
 
     <modules>
@@ -27,8 +27,8 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
+                        <source>1.6</source>
+                        <target>1.6</target>
                     </configuration>
                 </plugin>
             </plugins>
@@ -39,6 +39,22 @@
         <dependencies>
 
             <dependency>
+                <groupId>eu.nyerel.appmonitor</groupId>
+                <artifactId>appmonitor-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
                 <version>${spring.version}</version>
@@ -48,11 +64,28 @@
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
 
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.17</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
             </dependency>
 
             <dependency>
@@ -82,27 +115,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.javasimon</groupId>
-                <artifactId>javasimon-core</artifactId>
-                <version>${javasimon.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.javasimon</groupId>
-                <artifactId>javasimon-jdbc4</artifactId>
-                <version>${javasimon.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.javasimon</groupId>
-                <artifactId>javasimon-javaee</artifactId>
-                <version>${javasimon.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.javasimon</groupId>
-                <artifactId>javasimon-spring</artifactId>
-                <version>${javasimon.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>14.0-rc2</version>
@@ -111,8 +123,14 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.10</version>
+                <version>4.11</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.7.3</version>
             </dependency>
 
         </dependencies>
