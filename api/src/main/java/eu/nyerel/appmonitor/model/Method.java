@@ -30,4 +30,23 @@ public class Method {
         return sourceClass.getName() + "#" + name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Method method = (Method) o;
+
+        if (!name.equals(method.name)) return false;
+        if (!sourceClass.equals(method.sourceClass)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = sourceClass.hashCode();
+        result = 31 * result + name.hashCode();
+        return result;
+    }
 }

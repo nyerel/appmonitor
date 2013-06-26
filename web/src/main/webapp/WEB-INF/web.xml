@@ -23,4 +23,19 @@
         <url-pattern>/WEB-INF/servlet/view</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>monitoring-results</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-context/servlets/monitoring-results.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>monitoring-results</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
 </web-app>

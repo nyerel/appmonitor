@@ -27,7 +27,7 @@ public class CallStack {
         } else {
             Validate.notNull(current);
             call = new MethodCall(method, current);
-            current.addInnerMethodCall(call);
+            current.addChild(call);
         }
         current = call;
     }

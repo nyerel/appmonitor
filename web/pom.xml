@@ -13,8 +13,31 @@
     <artifactId>appmonitor-web</artifactId>
     <packaging>war</packaging>
 
+    <build>
+        <finalName>appmonitor</finalName>
+    </build>
+
     <dependencies>
 
+        <dependency>
+            <groupId>eu.nyerel.appmonitor</groupId>
+            <artifactId>appmonitor-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.nyerel.appmonitor</groupId>
+            <artifactId>appmonitor-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -22,6 +45,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId> org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.12</version>
         </dependency>
 
     </dependencies>

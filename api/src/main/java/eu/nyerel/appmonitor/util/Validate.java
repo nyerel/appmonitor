@@ -25,4 +25,13 @@ public class Validate {
         }
     }
 
+    public static void isTrue(boolean condition) {
+        isTrue(condition, "Validated condition is false");
+    }
+
+    public static void isTrue(boolean condition, String message) {
+        if (!condition) {
+            throw new IllegalArgumentException(message);
+        }
+    }
 }
