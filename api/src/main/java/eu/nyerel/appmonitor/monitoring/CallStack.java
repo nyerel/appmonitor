@@ -32,10 +32,10 @@ public class CallStack {
         current = call;
     }
 
-    public void exitMethod(long duration) {
+    public void exitMethod() {
         Validate.notNull(root);
         Validate.notNull(current);
-        current.setDuration(duration);
+        current.finished();
         if (current == root) {
             notifyRootMethodFinished();
             root = null;

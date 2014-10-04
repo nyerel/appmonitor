@@ -16,8 +16,8 @@ public class MethodCall extends BaseMethodCall<MethodCall> {
         this.startTime = System.currentTimeMillis();
     }
 
-    public long getStartTime() {
-        return startTime;
+    public void finished() {
+        setDuration(System.currentTimeMillis() - startTime);
     }
 
 }

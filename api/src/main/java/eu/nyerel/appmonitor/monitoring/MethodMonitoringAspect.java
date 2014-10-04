@@ -20,11 +20,10 @@ public abstract class MethodMonitoringAspect {
         CallStack callStack = CallStackHolder.getCallStack();
         Method method = createMethod(pjp);
         callStack.enterMethod(method);
-        long start = System.currentTimeMillis();
         try {
             return pjp.proceed();
         } finally {
-            callStack.exitMethod(System.currentTimeMillis() - start);
+            callStack.exitMethod();
         }
     }
 
